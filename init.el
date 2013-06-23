@@ -1,7 +1,7 @@
 ;; -------------------------------------------
 ;;
 ;; dotemacs for GNU Emacs
-;; Time-stamp: <2013-06-20 15:10:55 cs3612>
+;; Time-stamp: <2013-06-22 23:25:16 yufei>
 ;;
 ;; -------------------------------------------
 
@@ -112,9 +112,6 @@
 (put 'narrow-to-region 'disabled nil)
 
 
-;; ======================== MOVE BETWEEN WINDOWS =====================
-(windmove-default-keybindings)
-(setq windmove-wrap-around t)
 
 ;; ======================== ETC ======================================
 ;(setq-default tab-width 4) ;; default tab width
@@ -125,6 +122,12 @@
 ;; ======================== KILL CURRENT BUFFER ======================
 (global-unset-key (kbd "M-k"))
 (global-set-key (kbd "M-k") 'kill-this-buffer)
+
+;; ======================== MOVE BETWEEN WINDOWS =====================
+;; move between windows with S-arrow, this is commented because I use
+;; new windows management key binding as following.
+;(windmove-default-keybindings) 
+;(setq windmove-wrap-around t)
 
 ;; ======================== Windows Management =======================
 ;; map the window manipulation keys to meta 0, 1, 2, o
