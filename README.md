@@ -1,6 +1,4 @@
 .emacs.d
 ========
 
-Emacs configure directory
-
-Need to improve later.
+Emacs configure directory. Start from init.el. 
