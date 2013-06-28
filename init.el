@@ -90,8 +90,8 @@
 (define-key global-map (kbd "C-c s") 'google-search-selection)
 
 ;; ======================== Auctex ===================================
-(load "auctex.el" nil t t)
-(load "preview-latex.el" nil t t)
+;(load "auctex.el" nil t t)
+;(load "preview-latex.el" nil t t)
 
 (mapc (lambda (mode)
       (add-hook 'LaTeX-mode-hook mode))
