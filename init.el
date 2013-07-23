@@ -1,7 +1,7 @@
 ;; -------------------------------------------
 ;;
 ;; dotemacs for GNU Emacs
-;; Time-stamp: <2013-06-22 23:25:16 yufei>
+;; Time-stamp: <2013-07-23 12:37:56 cs3612>
 ;;
 ;; -------------------------------------------
 
@@ -115,6 +115,7 @@
 
 ;; ======================== ETC ======================================
 ;(setq-default tab-width 4) ;; default tab width
+(setq tab-width 4)
 
 ;;transparent
 ;(modify-frame-parameters (selected-frame) `((alpha . 95)))
@@ -191,6 +192,8 @@ Position the cursor at its beginning, according to the current mode."
 (package-initialize)
 (elpy-enable)
 
+;; ==================== Haskell ======================================
+(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
 
 ;; ==================== TIME-STAMP ===================================
 ;; when there is a "Time-stamp: <>" in the first 10 lines of the file,
@@ -204,7 +207,10 @@ Position the cursor at its beginning, according to the current mode."
 (add-hook 'before-save-hook 'time-stamp) ; update when saving
 
 ;; ==================== ETAGS ========================================
-;find . -name "*.[ch]" | xargs etags
+; ctag -e -R . 
+
+;; ==================== FILL-COLUMN LENGTH ===========================
+(setq fill-column 89) 
 
 ;; ==================== custom set  ==================================
 (custom-set-variables
@@ -216,11 +222,6 @@ Position the cursor at its beginning, according to the current mode."
  '(custom-enabled-themes (quote (tsdh-dark)))
  '(custom-safe-themes (quote ("71b172ea4aad108801421cc5251edb6c792f3adbaecfa1c52e94e3d99634dee7" default)))
  '(ecb-options-version "2.40")
- '(ecb-primary-secondary-mouse-buttons (quote mouse-2--C-mouse-2))
- '(fci-rule-color "#383838"))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+ '(ecb-primary-secondary-mouse-buttons (quote mouse-2--C-mouse-2) t)
+ '(fci-rule-color "#383838")
+ '(tab-stop-list (quote (4 8 12 16 20 24 28 32 36 40 44 48 52 56 60 64 68 72 76 80 84 88 92 96 100 104 108 112 116 120))))
