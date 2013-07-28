@@ -1,9 +1,9 @@
-.emacs.d
-========
+#+TITLE:  .emacs.d
+# Time-stamp: <2013-07-28 01:15:16 yufei>
 
 Emacs configure directory. Start at init.el. 
 
-After git clone, you should use M-x list-package to install following packages.
+After =git clone=, you should use M-x list-package to install following packages.
 
 | auctex             | 11.86 |
 | auto-complete      |   1.4 |
