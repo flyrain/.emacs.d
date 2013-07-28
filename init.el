@@ -1,7 +1,7 @@
 ;; -------------------------------------------
 ;;
 ;; dotemacs for GNU Emacs
-;; Time-stamp: <2013-07-28 00:53:12 yufei>
+;; Time-stamp: <2013-07-28 15:17:21 cs3612>
 ;;
 ;; -------------------------------------------
 
@@ -225,7 +225,7 @@ Position the cursor at its beginning, according to the current mode."
       ;TODO put some strings handle here
       (set-mark start) ;mark the whole area, optional
       (goto-char start) 
-      (search-backward  current-word)
+      (search-backward  current-word nil t)
       )))
 
 (global-set-key (kbd "C-q") 'search-back-current-word)
