@@ -1,7 +1,7 @@
 ;; -------------------------------------------
 ;;
 ;; dotemacs for GNU Emacs
-;; Time-stamp: <2013-07-23 12:37:56 cs3612>
+;; Time-stamp: <2013-07-28 00:53:12 yufei>
 ;;
 ;; -------------------------------------------
 
@@ -211,6 +211,25 @@ Position the cursor at its beginning, according to the current mode."
 
 ;; ==================== FILL-COLUMN LENGTH ===========================
 (setq fill-column 89) 
+
+;; ==================== SEARCH-BACK-CURRENT-WORD =====================
+(defun search-back-current-word ()
+  "search backward by current word"
+  (interactive)
+  (save-restriction
+    (let (start end)
+      (skip-chars-backward "-_A-Za-z0-9") (setq start (point))
+      (skip-chars-forward "-_A-Za-z0-9") (setq end (point))
+      (setq current-word  (buffer-substring start end))
+
+      ;TODO put some strings handle here
+      (set-mark start) ;mark the whole area, optional
+      (goto-char start) 
+      (search-backward  current-word)
+      )))
+
+(global-set-key (kbd "C-q") 'search-back-current-word)
+
 
 ;; ==================== custom set  ==================================
 (custom-set-variables

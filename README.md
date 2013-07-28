@@ -1,7 +1,7 @@
 .emacs.d
 ========
 
-Emacs configure directory. Start from init.el. 
+Emacs configure directory. Start at init.el. 
 
 After git clone, you should use M-x list-package to install following packages.
 
@@ -24,3 +24,4 @@ After git clone, you should use M-x list-package to install following packages.
   starter-kit        2.0.3        installed  Saner defaults and goodies.
   virtualenv         1.2          installed  Virtualenv for Python  -*- coding: utf-8 -*-
   yasnippet          0.8.0        installed  A template system for Emacs
+  haskell-mode       13.7         installed  A Haskell editing mode
