@@ -1,7 +1,7 @@
 ;; -------------------------------------------
 ;;
 ;; dotemacs for GNU Emacs
-;; Time-stamp: <2013-07-30 23:40:38 yufei>
+;; Time-stamp: <2013-07-31 12:21:10 cs3612>
 ;;
 ;; -------------------------------------------
 
@@ -235,19 +235,23 @@ Position the cursor at its beginning, according to the current mode."
    "open file and goto specified line"
   (switch-to-buffer-other-window name)
   (find-file name)
-  (goto-line line))
+  (goto-line line)
+  (hl-line-highlight))
 
 ;(open-file-line "test.c" 3)
+
 
 (defun goto-src-line()
   (interactive)
   (setq my-str (buffer-substring (line-beginning-position) (line-end-position)))
-  (setq my-list (delete "" (split-string my-str " ")))
-  (open-file-line (nth 2 my-list) (string-to-number (nth 1 my-list)))
+  (setq my-list (delete "" (split-string my-str "\t")))
+  (open-file-line 
+   (concat "../linux-2.6.32-rc8" (nth 4 my-list)) 
+   (string-to-number (nth 3 my-list)))
+ (other-window 1)
 )
 
-; test 
-;a 11  test.c
+(global-set-key (kbd "C-z") 'goto-src-line)
 
 
 ;; ==================== custom set  ==================================
