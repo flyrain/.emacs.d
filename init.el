@@ -1,7 +1,7 @@
 ;; -------------------------------------------
 ;;
 ;; dotemacs for GNU Emacs
-;; Time-stamp: <2013-07-31 12:21:10 cs3612>
+;; Time-stamp: <2013-08-01 16:37:11 cs3612>
 ;;
 ;; -------------------------------------------
 
@@ -249,6 +249,7 @@ Position the cursor at its beginning, according to the current mode."
    (concat "../linux-2.6.32-rc8" (nth 4 my-list)) 
    (string-to-number (nth 3 my-list)))
  (other-window 1)
+ (goto-line (+ 1 (line-number-at-pos)))
 )
 
 (global-set-key (kbd "C-z") 'goto-src-line)
