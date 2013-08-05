@@ -1,7 +1,7 @@
 ;; -------------------------------------------
 ;;
 ;; dotemacs for GNU Emacs
-;; Time-stamp: <2013-08-01 16:37:11 cs3612>
+;; Time-stamp: <2013-08-05 14:23:54 cs3612>
 ;;
 ;; -------------------------------------------
 
@@ -245,11 +245,13 @@ Position the cursor at its beginning, according to the current mode."
   (interactive)
   (setq my-str (buffer-substring (line-beginning-position) (line-end-position)))
   (setq my-list (delete "" (split-string my-str "\t")))
-  (open-file-line 
-   (concat "../linux-2.6.32-rc8" (nth 4 my-list)) 
-   (string-to-number (nth 3 my-list)))
- (other-window 1)
- (goto-line (+ 1 (line-number-at-pos)))
+  (if (> (length my-list) 4)
+   (progn 
+     (open-file-line 
+      (concat "../linux-2.6.32-rc8" (nth 4 my-list)) 
+      (string-to-number (nth 3 my-list)))
+     (other-window 1)
+     (goto-line (+ 1 (line-number-at-pos)))))
 )
 
 (global-set-key (kbd "C-z") 'goto-src-line)
