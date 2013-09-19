@@ -1,7 +1,7 @@
 ;; -------------------------------------------
 ;;
 ;; dotemacs for GNU Emacs
-;; Time-stamp: <2013-08-05 14:23:54 cs3612>
+;; Time-stamp: <2013-09-19 00:14:19 cs3612>
 ;;
 ;; -------------------------------------------
 
@@ -115,7 +115,8 @@
 
 ;; ======================== ETC ======================================
 ;(setq-default tab-width 4) ;; default tab width
-(setq tab-width 4)
+;(setq tab-width 4)
+(setq default-tab-width 4)
 
 ;;transparent
 ;(modify-frame-parameters (selected-frame) `((alpha . 95)))
@@ -248,7 +249,8 @@ Position the cursor at its beginning, according to the current mode."
   (if (> (length my-list) 4)
    (progn 
      (open-file-line 
-      (concat "../linux-2.6.32-rc8" (nth 4 my-list)) 
+      ;(concat "../linux-2.6.32-rc8" (nth 4 my-list)) 
+      (concat "../linux-2.6.32.8" (nth 4 my-list)) 
       (string-to-number (nth 3 my-list)))
      (other-window 1)
      (goto-line (+ 1 (line-number-at-pos)))))
@@ -269,4 +271,4 @@ Position the cursor at its beginning, according to the current mode."
  '(ecb-options-version "2.40")
  '(ecb-primary-secondary-mouse-buttons (quote mouse-2--C-mouse-2) t)
  '(fci-rule-color "#383838")
- '(tab-stop-list (quote (4 8 12 16 20 24 28 32 36 40 44 48 52 56 60 64 68 72 76 80 84 88 92 96 100 104 108 112 116 120))))
+ )
