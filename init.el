@@ -1,7 +1,7 @@
 ;; -------------------------------------------
 ;;
 ;; dotemacs for GNU Emacs
-;; Time-stamp: <2013-09-19 00:14:19 cs3612>
+;; Time-stamp: <2013-09-19 01:19:58 yufei>
 ;;
 ;; -------------------------------------------
 
@@ -114,9 +114,13 @@
 
 
 ;; ======================== ETC ======================================
-;(setq-default tab-width 4) ;; default tab width
-;(setq tab-width 4)
-(setq default-tab-width 4)
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 4)
+(setq indent-line-function 'insert-tab)
+
+; for c-mode
+(setq c-default-style "linux"
+          c-basic-offset 4)
 
 ;;transparent
 ;(modify-frame-parameters (selected-frame) `((alpha . 95)))
