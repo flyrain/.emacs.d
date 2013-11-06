@@ -1,7 +1,7 @@
 ;; -------------------------------------------
 ;;
 ;; dotemacs for GNU Emacs
-;; Time-stamp: <2013-09-19 01:19:58 yufei>
+;; Time-stamp: <2013-11-06 12:13:28 cs3612>
 ;;
 ;; -------------------------------------------
 
@@ -118,9 +118,13 @@
 (setq-default tab-width 4)
 (setq indent-line-function 'insert-tab)
 
-; for c-mode
+;; ======================= C-MODE ====================================
 (setq c-default-style "linux"
           c-basic-offset 4)
+
+;(require 'google-c-style)
+;(add-hook 'c-mode-common-hook 'google-set-c-style)
+;(add-hook 'c-mode-common-hook 'google-make-newline-indent)
 
 ;;transparent
 ;(modify-frame-parameters (selected-frame) `((alpha . 95)))
