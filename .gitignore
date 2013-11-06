@@ -1,0 +1,11 @@
+auto-save-list
+backups
+elpa
+session.*
+/url/cookies
+/url/cookies~
+/tutorial/English.tut
+/ac-comphist.dat
+/places
+/tramp
+/.smex-items

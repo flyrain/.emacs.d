@@ -1,7 +1,7 @@
 ;; -------------------------------------------
 ;;
 ;; dotemacs for GNU Emacs
-;; Time-stamp: <2013-11-06 12:13:28 cs3612>
+;; Time-stamp: <2013-11-06 16:12:20 cs3612>
 ;;
 ;; -------------------------------------------
 
@@ -28,6 +28,7 @@
 (add-to-list 'package-archives 
     '("marmalade" .
       "http://marmalade-repo.org/packages/"))
+(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
 (package-initialize)
 
 ;;======================= SHUTDOWN EMACS SERVER INSTANCE =============
@@ -220,6 +221,17 @@ Position the cursor at its beginning, according to the current mode."
 
 ;; ==================== FILL-COLUMN LENGTH ===========================
 (setq fill-column 89) 
+
+;; =========================== ORG-CRYPT =============================
+(require 'org-crypt)
+; Encrypt all entries before saving
+(org-crypt-use-before-save-magic)
+(setq org-tags-exclude-from-inheritance (quote ("crypt")))
+; GPG key to use for encryption
+(setq org-crypt-key "ff") ;this doesn't work, I should enter password
+                          ;every time when I was saving modified
+                          ;entries
+(setq org-crypt-disable-auto-save nil)
 
 ;; ==================== SEARCH-BACK-CURRENT-WORD =====================
 (defun search-back-current-word ()
