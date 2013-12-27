@@ -1,7 +1,7 @@
 ;; -------------------------------------------
 ;;
 ;; dotemacs for GNU Emacs
-;; Time-stamp: <2013-11-06 16:12:20 cs3612>
+;; Time-stamp: <2013-12-27 10:32:44 cs3612>
 ;;
 ;; -------------------------------------------
 
@@ -233,6 +233,12 @@ Position the cursor at its beginning, according to the current mode."
                           ;entries
 (setq org-crypt-disable-auto-save nil)
 
+;; =========================== GNU GLOBAL =============================
+    (add-hook 'c-mode-common-hook
+              (lambda ()
+                (when (derived-mode-p 'c-mode 'c++-mode 'java-mode)
+                  (ggtags-mode 1))))
+
 ;; ==================== SEARCH-BACK-CURRENT-WORD =====================
 (defun search-back-current-word ()
   "search backward by current word"
@@ -270,7 +276,7 @@ Position the cursor at its beginning, according to the current mode."
    (progn 
      (open-file-line 
       ;(concat "../linux-2.6.32-rc8" (nth 4 my-list)) 
-      (concat "../linux-2.6.32.8" (nth 4 my-list)) 
+      (concat "./linux-3.2.52" (nth 4 my-list)) 
       (string-to-number (nth 3 my-list)))
      (other-window 1)
      (goto-line (+ 1 (line-number-at-pos)))))
