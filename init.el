@@ -1,7 +1,7 @@
 ;; -------------------------------------------
 ;;
 ;; dotemacs for GNU Emacs
-;; Time-stamp: <2013-12-27 10:32:44 cs3612>
+;; Time-stamp: <2014-01-07 12:10:58 cs3612>
 ;;
 ;; -------------------------------------------
 
@@ -199,8 +199,9 @@ Position the cursor at its beginning, according to the current mode."
 (setq tramp-default-method "scp")
 
 ;; ==================== ELPY MODE ====================================
-(package-initialize)
-(elpy-enable)
+;; Not use anymore, because its performance
+;(package-initialize)
+;(elpy-enable)
 
 ;; ==================== Haskell ======================================
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
