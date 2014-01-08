@@ -1,7 +1,7 @@
 ;; -------------------------------------------
 ;;
 ;; dotemacs for GNU Emacs
-;; Time-stamp: <2014-01-07 12:10:58 cs3612>
+;; Time-stamp: <2014-01-08 14:51:39 cs3612>
 ;;
 ;; -------------------------------------------
 
@@ -223,6 +223,9 @@ Position the cursor at its beginning, according to the current mode."
 ;; ==================== FILL-COLUMN LENGTH ===========================
 (setq fill-column 89) 
 
+;; ========================== SEND MAIL  =============================
+(setq user-mail-address "yufei.gu@utdallas.edu")
+
 ;; =========================== ORG-CRYPT =============================
 (require 'org-crypt)
 ; Encrypt all entries before saving
@@ -298,4 +301,12 @@ Position the cursor at its beginning, according to the current mode."
  '(ecb-options-version "2.40")
  '(ecb-primary-secondary-mouse-buttons (quote mouse-2--C-mouse-2) t)
  '(fci-rule-color "#383838")
+ '(send-mail-function (quote smtpmail-send-it))
+ '(smtpmail-smtp-server "smtpauth.utdallas.edu")
+ '(smtpmail-smtp-service 587))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  )
