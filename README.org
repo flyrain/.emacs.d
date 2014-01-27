@@ -1,5 +1,5 @@
 #+TITLE:  .emacs.d
-# Time-stamp: <2014-01-12 03:19:02 yufei>
+# Time-stamp: <2014-01-27 12:35:50 cs3612>
 
 Emacs configure directory. Start at init.el. 
 
@@ -24,3 +24,8 @@ After =git clone=, you should use M-x list-package to install following packages
 | virtualenv         |   1.2 |
 | yasnippet          | 0.8.0 |
 | haskell-mode       |  13.7 |
+
+Install emacs-eim
+=cd ~/.emacs.d/plugins=
+
+=git clone https://github.com/wenbinye/emacs-eim=

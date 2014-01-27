@@ -1,7 +1,7 @@
 ;; -------------------------------------------
 ;;
 ;; dotemacs for GNU Emacs
-;; Time-stamp: <2014-01-08 14:51:39 cs3612>
+;; Time-stamp: <2014-01-27 11:04:10 cs3612>
 ;;
 ;; -------------------------------------------
 
@@ -40,23 +40,24 @@
   )
 
 ;;========================== ibus-el =================================
-(add-to-list 'load-path "~/.emacs.d/plugins/ibus-el-0.3.2")
-(require 'ibus)
+;(add-to-list 'load-path "~/.emacs.d/plugins/ibus-el-0.3.2")
+;(require 'ibus)
+
 ;;(defun toggle-ibus()
 ;;  (interactive)
 ;;  (if ibus-mode (ibus-mode-off) (ibus-mode-on))
 ;;)
 
 ;; Turn on ibus-mode automatically after loading .emacs
-(add-hook 'after-init-hook 'ibus-mode-on)
+;(add-hook 'after-init-hook 'ibus-mode-on)
 ;; Use C-\ for ibus-toggle (English and Chinese)
-(global-set-key (kbd "C-\\") 'ibus-toggle)
+;(global-set-key (kbd "C-\\") 'ibus-toggle)
 ;; Use C-SPC for Set Mark command
-(ibus-define-common-key ?\C-\s nil)
+;(ibus-define-common-key ?\C-\s nil)
 ;; Use C-/ for Undo command
-(ibus-define-common-key ?\C-/ nil)
+;(ibus-define-common-key ?\C-/ nil)
 ;; Change cursor color depending on IBus status
-(setq ibus-cursor-color '("red" "blue" "limegreen"))
+;(setq ibus-cursor-color '("red" "blue" "limegreen"))
 
 
 ;;========================== IDO =====================================
@@ -288,6 +289,25 @@ Position the cursor at its beginning, according to the current mode."
 
 (global-set-key (kbd "C-z") 'goto-src-line)
 
+;; ==================== julia mode  ==================================
+(require 'julia-mode)
+
+;; ==================== eim  ==================================
+(add-to-list 'load-path "~/.emacs.d/plugins/emacs-eim")
+(autoload 'eim-use-package "eim" "Another emacs input method")
+;; Tooltip 暂时还不好用
+(setq eim-use-tooltip nil)
+
+(register-input-method
+ "eim-wb" "euc-cn" 'eim-use-package
+ "五笔" "汉字五笔输入法" "wb.txt")
+(register-input-method
+ "eim-py" "euc-cn" 'eim-use-package
+ "拼音" "汉字拼音输入法" "py.txt")
+
+;; 用 ; 暂时输入英文
+(require 'eim-extra)
+(global-set-key ";" 'eim-insert-ascii)
 
 ;; ==================== custom set  ==================================
 (custom-set-variables
