@@ -1,11 +1,12 @@
 ;; -------------------------------------------
 ;;
 ;; dotemacs for GNU Emacs
-;; Time-stamp: <2014-01-27 11:04:10 cs3612>
+;; Time-stamp: <2014-01-27 22:09:22 yufei>
 ;;
 ;; -------------------------------------------
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d"))
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/plugins"))
 
 (setq inhibit-startup-message t) 
 
@@ -22,7 +23,6 @@
 (setq ecb-primary-secondary-mouse-buttons (quote mouse-1–mouse-2))
 (setq ecb-source-path (quote ("~/")))
 
-
 ;;======================= ADD PACKAGE SOURCES ========================
 (require 'package)
 (add-to-list 'package-archives 
@@ -38,27 +38,6 @@
   (save-some-buffers)
   (kill-emacs)
   )
-
-;;========================== ibus-el =================================
-;(add-to-list 'load-path "~/.emacs.d/plugins/ibus-el-0.3.2")
-;(require 'ibus)
-
-;;(defun toggle-ibus()
-;;  (interactive)
-;;  (if ibus-mode (ibus-mode-off) (ibus-mode-on))
-;;)
-
-;; Turn on ibus-mode automatically after loading .emacs
-;(add-hook 'after-init-hook 'ibus-mode-on)
-;; Use C-\ for ibus-toggle (English and Chinese)
-;(global-set-key (kbd "C-\\") 'ibus-toggle)
-;; Use C-SPC for Set Mark command
-;(ibus-define-common-key ?\C-\s nil)
-;; Use C-/ for Undo command
-;(ibus-define-common-key ?\C-/ nil)
-;; Change cursor color depending on IBus status
-;(setq ibus-cursor-color '("red" "blue" "limegreen"))
-
 
 ;;========================== IDO =====================================
 (require 'init-ido)
@@ -113,8 +92,6 @@
             (define-key LaTeX-mode-map (kbd "TAB") 'TeX-complete-symbol)))
 (put 'narrow-to-region 'disabled nil)
 
-
-
 ;; ======================== ETC ======================================
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
@@ -148,7 +125,6 @@
 (global-set-key (kbd "M-1") 'delete-other-windows) ; was digit-argument
 (global-set-key (kbd "M-0") 'delete-window) ; was digit-argument
 (global-set-key (kbd "M-o") 'other-window) ; was facemenu-keymap
-
 (global-set-key (kbd "M-O") 'rotate-windows)
 
 ;; Replace dired's M-o
@@ -180,7 +156,6 @@
 ;; ======================= MAKE ======================================
 (global-set-key [(control return)] 'compile)
 
-
 ;; ======================= IEDIT =====================================
 (define-key global-map (kbd "C-;") 'iedit-mode)
 (define-key isearch-mode-map (kbd "C-;") 'iedit-mode)
@@ -198,11 +173,6 @@ Position the cursor at its beginning, according to the current mode."
 ;; ==================== EDIT REMOTE FILE =============================
 (require 'tramp)
 (setq tramp-default-method "scp")
-
-;; ==================== ELPY MODE ====================================
-;; Not use anymore, because its performance
-;(package-initialize)
-;(elpy-enable)
 
 ;; ==================== Haskell ======================================
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
