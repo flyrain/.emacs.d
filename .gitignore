@@ -9,3 +9,4 @@ session.*
 /places
 /tramp
 /.smex-items
+/plugins/emacs-eim/
