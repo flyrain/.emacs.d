@@ -1,7 +1,7 @@
 ;; -------------------------------------------
 ;;
 ;; dotemacs for GNU Emacs
-;; Time-stamp: <2014-01-27 22:09:22 yufei>
+;; Time-stamp: <2014-01-29 11:36:42 cs3612>
 ;;
 ;; -------------------------------------------
 
@@ -215,6 +215,7 @@ Position the cursor at its beginning, according to the current mode."
                   (ggtags-mode 1))))
 
 ;; ==================== SEARCH-BACK-CURRENT-WORD =====================
+;; functions for kernel source code review
 (defun search-back-current-word ()
   "search backward by current word"
   (interactive)
@@ -241,7 +242,6 @@ Position the cursor at its beginning, according to the current mode."
   (hl-line-highlight))
 
 ;(open-file-line "test.c" 3)
-
 
 (defun goto-src-line()
   (interactive)
@@ -278,6 +278,8 @@ Position the cursor at its beginning, according to the current mode."
 ;; 用 ; 暂时输入英文
 (require 'eim-extra)
 (global-set-key ";" 'eim-insert-ascii)
+
+(custom-set-variables '(default-input-method "eim-py"))
 
 ;; ==================== custom set  ==================================
 (custom-set-variables
