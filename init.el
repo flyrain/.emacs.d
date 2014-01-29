@@ -1,7 +1,7 @@
 ;; -------------------------------------------
 ;;
 ;; dotemacs for GNU Emacs
-;; Time-stamp: <2014-01-29 11:36:42 cs3612>
+;; Time-stamp: <2014-01-29 17:54:22 cs3612>
 ;;
 ;; -------------------------------------------
 
@@ -280,6 +280,9 @@ Position the cursor at its beginning, according to the current mode."
 (global-set-key ";" 'eim-insert-ascii)
 
 (custom-set-variables '(default-input-method "eim-py"))
+
+;; ==================== eshell  ==================================
+(setq eshell-aliases-file "~/.emacs.d/eshell-alias")
 
 ;; ==================== custom set  ==================================
 (custom-set-variables

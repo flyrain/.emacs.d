@@ -1,0 +1,4 @@
+alias llo find-file-other-window $1
+alias ll find-file $1
+alias less find-file $1
+alias l ls -thl

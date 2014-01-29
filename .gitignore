@@ -10,3 +10,4 @@ session.*
 /tramp
 /.smex-items
 /plugins/emacs-eim/
+/ede-projects.el
