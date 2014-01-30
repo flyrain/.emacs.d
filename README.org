@@ -1,9 +1,9 @@
 #+TITLE:  .emacs.d
-# Time-stamp: <2014-01-27 12:39:26 cs3612>
+# Time-stamp: <2014-01-30 11:51:41 cs3612>
 
 Emacs configure directory. Start at init.el. 
 
-After =git clone=, you should use M-x list-package to install following packages.
+* After =git clone=, you should use M-x list-package to install following packages.
 
 | auctex             | 11.86 |
 | auto-complete      |   1.4 |
@@ -25,7 +25,7 @@ After =git clone=, you should use M-x list-package to install following packages
 | yasnippet          | 0.8.0 |
 | haskell-mode       |  13.7 |
 
-Install emacs-eim
+* Install emacs-eim
 
 =cd ~/.emacs.d/plugins=
 
