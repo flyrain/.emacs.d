@@ -1,7 +1,7 @@
 ;; -------------------------------------------
 ;;
 ;; dotemacs for GNU Emacs
-;; Time-stamp: <2014-01-29 17:54:22 cs3612>
+;; Time-stamp: <2014-01-29 18:25:52 cs3612>
 ;;
 ;; -------------------------------------------
 
@@ -265,8 +265,8 @@ Position the cursor at its beginning, according to the current mode."
 ;; ==================== eim  ==================================
 (add-to-list 'load-path "~/.emacs.d/plugins/emacs-eim")
 (autoload 'eim-use-package "eim" "Another emacs input method")
-;; Tooltip 暂时还不好用
-(setq eim-use-tooltip nil)
+;; Tooltip 暂时还不好用, it may have problem in Windows or Mac, but it is OK for Linux, so I keep it.
+;(setq eim-use-tooltip nil)
 
 (register-input-method
  "eim-wb" "euc-cn" 'eim-use-package
