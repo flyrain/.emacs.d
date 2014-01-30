@@ -1,7 +1,7 @@
 ;; -------------------------------------------
 ;;
 ;; dotemacs for GNU Emacs
-;; Time-stamp: <2014-01-29 18:25:52 cs3612>
+;; Time-stamp: <2014-01-30 01:41:13 yufei>
 ;;
 ;; -------------------------------------------
 
@@ -64,6 +64,12 @@
    (sqlite . t)
    (perl . t)
    ))
+
+(setq org-agenda-files (list "~/Dropbox"))
+(global-set-key (kbd "<f12>") 'org-agenda)
+
+(setq org-default-notes-file "~/Dropbox/refile.org")
+(global-set-key (kbd "C-c c") 'org-capture)
 
 ;; ======================== Google ===================================
 (load-file "~/.emacs.d/plugins/google.el")
@@ -281,7 +287,7 @@ Position the cursor at its beginning, according to the current mode."
 
 (custom-set-variables '(default-input-method "eim-py"))
 
-;; ==================== eshell  ==================================
+;; ==================== ESHELL  ==================================
 (setq eshell-aliases-file "~/.emacs.d/eshell-alias")
 
 ;; ==================== custom set  ==================================
