@@ -1,7 +1,7 @@
 ;; -------------------------------------------
 ;;
 ;; dotemacs for GNU Emacs
-;; Time-stamp: <2014-02-02 15:35:25 yufei>
+;; Time-stamp: <2014-02-02 15:42:03 yufei>
 ;;
 ;; -------------------------------------------
 
@@ -69,7 +69,7 @@
 (global-set-key (kbd "<f12>") 'org-agenda)
 
 (setq org-default-notes-file "~/Dropbox/refile.org")
-(global-set-key (kbd "C-c c") 'org-capture);
+(global-set-key (kbd "C-c c") 'org-capture)
 (setq org-log-done 'time)
 
 ;; ======================== Google ===================================
