@@ -1,7 +1,7 @@
 ;; -------------------------------------------
 ;;
 ;; dotemacs for GNU Emacs
-;; Time-stamp: <2014-02-05 00:14:24 yufei>
+;; Time-stamp: <2014-02-05 12:27:32 cs3612>
 ;;
 ;; -------------------------------------------
 
@@ -292,6 +292,18 @@ Position the cursor at its beginning, according to the current mode."
 (setq eshell-aliases-file "~/.emacs.d/eshell-alias")
 ;set completion in eshell case insensitive
 (setq eshell-cmpl-ignore-case t)
+
+;; clear the buffer in eshell
+(defun eshell-clear ()
+  "clear the eshell buffer."
+  (interactive)
+  (let ((inhibit-read-only t))
+    (erase-buffer)))
+
+(add-hook 'eshell-mode-hook
+    (lambda ()
+   (local-set-key "\C-l" 'eshell-clear))
+)
 
 ;; ==================== custom set  ==================================
 (custom-set-variables
