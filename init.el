@@ -1,7 +1,7 @@
 ;; -------------------------------------------
 ;;
 ;; dotemacs for GNU Emacs
-;; Time-stamp: <2014-02-02 15:42:03 yufei>
+;; Time-stamp: <2014-02-05 00:14:24 yufei>
 ;;
 ;; -------------------------------------------
 
@@ -216,10 +216,10 @@ Position the cursor at its beginning, according to the current mode."
 (setq org-crypt-disable-auto-save nil)
 
 ;; =========================== GNU GLOBAL =============================
-    (add-hook 'c-mode-common-hook
-              (lambda ()
-                (when (derived-mode-p 'c-mode 'c++-mode 'java-mode)
-                  (ggtags-mode 1))))
+(add-hook 'c-mode-common-hook
+          (lambda ()
+            (when (derived-mode-p 'c-mode 'c++-mode 'java-mode)
+              (ggtags-mode 1))))
 
 ;; ==================== SEARCH-BACK-CURRENT-WORD =====================
 ;; functions for kernel source code review
@@ -290,6 +290,8 @@ Position the cursor at its beginning, according to the current mode."
 
 ;; ==================== ESHELL  ==================================
 (setq eshell-aliases-file "~/.emacs.d/eshell-alias")
+;set completion in eshell case insensitive
+(setq eshell-cmpl-ignore-case t)
 
 ;; ==================== custom set  ==================================
 (custom-set-variables
