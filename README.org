@@ -1,9 +1,10 @@
 #+TITLE:  .emacs.d
-# Time-stamp: <2014-01-30 11:51:41 cs3612>
+# Time-stamp: <2014-02-06 13:57:17 cs3612>
 
 Emacs configure directory. Start at init.el. 
 
-* After =git clone=, you should use M-x list-package to install following packages.
+* Install ELPA packages 
+After =git clone=, you should use M-x list-package to install following packages.
 
 | auctex             | 11.86 |
 | auto-complete      |   1.4 |
