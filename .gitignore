@@ -2,8 +2,7 @@ auto-save-list
 backups
 elpa
 session.*
-/url/cookies
-/url/cookies~
+/url/
 /tutorial/English.tut
 /ac-comphist.dat
 /places

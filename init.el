@@ -1,11 +1,11 @@
 ;; -------------------------------------------
 ;;
 ;; dotemacs for GNU Emacs
-;; Time-stamp: <2014-02-05 12:27:32 cs3612>
+;; Time-stamp: <2014-02-06 01:57:45 yufei>
 ;;
 ;; -------------------------------------------
 
-(add-to-list 'load-path (expand-file-name "~/.emacs.d"))
+;(add-to-list 'load-path (expand-file-name "~/.emacs.d"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/plugins"))
 
 (setq inhibit-startup-message t) 
@@ -305,6 +305,21 @@ Position the cursor at its beginning, according to the current mode."
    (local-set-key "\C-l" 'eshell-clear))
 )
 
+;; ==================== DICT  ==================================
+(defun bing-dict ()
+  "clear the eshell buffer."
+  (interactive)
+  (save-restriction
+    (let (start end)
+      (skip-chars-backward "-_A-Za-z0-9") (setq start (point))
+      (skip-chars-forward "-_A-Za-z0-9") (setq end (point))
+      (setq current-word  (buffer-substring start end))
+      (switch-to-buffer-other-window "dict") 
+      (eww (concat "http://cn.bing.com/dict/search?q=" current-word))
+      )))
+
+(global-set-key (kbd "C-c q") 'bing-dict)
+    
 ;; ==================== custom set  ==================================
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
