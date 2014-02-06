@@ -10,3 +10,6 @@ session.*
 /.smex-items
 /plugins/emacs-eim/
 /ede-projects.el
+/bookmarks
+/google-c-style.el
+/make-regexp.el

@@ -1,7 +1,7 @@
 ;; -------------------------------------------
 ;;
 ;; dotemacs for GNU Emacs
-;; Time-stamp: <2014-02-06 01:57:45 yufei>
+;; Time-stamp: <2014-02-06 12:07:40 cs3612>
 ;;
 ;; -------------------------------------------
 
@@ -314,9 +314,17 @@ Position the cursor at its beginning, according to the current mode."
       (skip-chars-backward "-_A-Za-z0-9") (setq start (point))
       (skip-chars-forward "-_A-Za-z0-9") (setq end (point))
       (setq current-word  (buffer-substring start end))
-      (switch-to-buffer-other-window "dict") 
       (eww (concat "http://cn.bing.com/dict/search?q=" current-word))
-      )))
+      ;(eww (concat "http://dict.youdao.com/search?q=" current-word)) ;result not good with youdao
+      (switch-to-buffer-other-window "*eww*")
+      ;wait for 1 second, because the buffer will refresh soon and it go back to top line.
+      (sit-for 1)
+      (search-forward current-word nil t 2)
+      (hl-line-mode "*eww*")
+      ;(end-of-line) ; move to end of line
+      ;(set-mark (line-beginning-position))
+      ))
+)
 
 (global-set-key (kbd "C-c q") 'bing-dict)
     
