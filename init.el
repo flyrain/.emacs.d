@@ -1,11 +1,10 @@
 ;; -------------------------------------------
 ;;
 ;; dotemacs for GNU Emacs
-;; Time-stamp: <2014-02-06 13:48:50 cs3612>
+;; Time-stamp: <2014-02-06 21:05:08 yufei>
 ;;
 ;; -------------------------------------------
 
-;(add-to-list 'load-path (expand-file-name "~/.emacs.d"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/plugins"))
 
 (setq inhibit-startup-message t) 
@@ -25,10 +24,12 @@
 
 ;;======================= ADD PACKAGE SOURCES ========================
 (require 'package)
-(add-to-list 'package-archives 
-    '("marmalade" .
-      "http://marmalade-repo.org/packages/"))
+;(add-to-list 'package-archives 
+;    '("marmalade" .
+;      "http://marmalade-repo.org/packages/"))
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (package-initialize)
 
 ;;======================= SHUTDOWN EMACS SERVER INSTANCE =============
