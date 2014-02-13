@@ -1,7 +1,7 @@
 ;; -------------------------------------------
 ;;
 ;; dotemacs for GNU Emacs
-;; Time-stamp: <2014-02-07 11:10:09 cs3612>
+;; Time-stamp: <2014-02-12 23:57:43 yufei>
 ;;
 ;; -------------------------------------------
 
@@ -24,11 +24,13 @@
 
 ;;======================= ADD PACKAGE SOURCES ========================
 (require 'package)
-;(add-to-list 'package-archives 
-;    '("marmalade" .
-;      "http://marmalade-repo.org/packages/"))
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(if (eq system-type 'cygwin) 
+    (add-to-list 'package-archives 
+                 '("marmalade" .
+                   "http://marmalade-repo.org/packages/") t)
+  (add-to-list 'package-archives
+               '("melpa" . "http://melpa.milkbox.net/packages/") t)
+  )
 (package-initialize)
 
 ;;======================= SHUTDOWN EMACS SERVER INSTANCE =============
@@ -65,10 +67,15 @@
    (perl . t)
    ))
 
-(setq org-agenda-files (list "~/Dropbox" "~/Dropbox/diary"))
+(if (eq system-type 'cygwin)
+    (setq my-org-directory "/cygdrive/c/Users/Yufei/")
+    (setq my-org-directory "~/") 
+    )
+    
+(setq org-agenda-files (list (concat my-org-directory "Dropbox") (concat my-org-directory "Dropbox/diary")))
 (global-set-key (kbd "<f12>") 'org-agenda)
 
-(setq org-default-notes-file "~/Dropbox/refile.org")
+(setq org-default-notes-file  (concat my-org-directory "Dropbox/refile.org"))
 (global-set-key (kbd "C-c c") 'org-capture)
 (setq org-log-done 'time)
 
@@ -269,24 +276,42 @@ Position the cursor at its beginning, according to the current mode."
 ;; ==================== julia mode  ==================================
 (require 'julia-mode)
 
+;; ==================== FONT SETTING  ================================
+(if (eq system-type 'cygwin) 
+    (progn 
+      ;; Setting English Font
+      (set-face-attribute
+       'default nil :font "Consolas 12")
+      
+      ;; Chinese Font
+      (dolist (charset '(kana han symbol cjk-misc bopomofo))
+        (set-fontset-font (frame-parameter nil 'font)
+                          charset
+                          (font-spec :family "Microsoft Yahei" :size 13))))
+  )
+
 ;; ==================== eim  ==================================
-(add-to-list 'load-path "~/.emacs.d/plugins/emacs-eim")
-(autoload 'eim-use-package "eim" "Another emacs input method")
-;; Tooltip 暂时还不好用, it may have problem in Windows or Mac, but it is OK for Linux, so I keep it.
-;(setq eim-use-tooltip nil)
+(if (eq system-type 'cygwin) ()
+  (progn
+    (add-to-list 'load-path "~/.emacs.d/plugins/emacs-eim")
+    (autoload 'eim-use-package "eim" "Another emacs input method")
+    ;; Tooltip 暂时还不好用, it may have problem in Windows or Mac, but it is OK for Linux, so I keep it.
+    ;(setq eim-use-tooltip nil)
 
-(register-input-method
- "eim-wb" "euc-cn" 'eim-use-package
- "五笔" "汉字五笔输入法" "wb.txt")
-(register-input-method
- "eim-py" "euc-cn" 'eim-use-package
- "拼音" "汉字拼音输入法" "py.txt")
+    (register-input-method
+     "eim-wb" "euc-cn" 'eim-use-package
+     "五笔" "汉字五笔输入法" "wb.txt")
+    (register-input-method
+     "eim-py" "euc-cn" 'eim-use-package
+     "拼音" "汉字拼音输入法" "py.txt")
 
-;; 用 ; 暂时输入英文
-(require 'eim-extra)
-(global-set-key ";" 'eim-insert-ascii)
+    ;; 用 ; 暂时输入英文
+    (require 'eim-extra)
+    (global-set-key ";" 'eim-insert-ascii)
 
-(custom-set-variables '(default-input-method "eim-py"))
+    (custom-set-variables '(default-input-method "eim-py"))
+    )
+  )
 
 ;; ==================== ESHELL  ==================================
 (setq eshell-aliases-file "~/.emacs.d/eshell-alias")
