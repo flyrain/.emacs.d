@@ -1,7 +1,7 @@
 ;; -------------------------------------------
 ;;
 ;; dotemacs for GNU Emacs
-;; Time-stamp: <2014-02-12 23:57:43 yufei>
+;; Time-stamp: <2014-02-13 02:07:22 yufei>
 ;;
 ;; -------------------------------------------
 
@@ -10,17 +10,6 @@
 (setq inhibit-startup-message t) 
 
 (show-paren-mode t) 
-
-;;========================== ECB =====================================
-(setq stack-trace-on-error t)
-
-;(setq stack-trace-on-error nil) ;;don’t popup Backtrace window
-(setq ecb-tip-of-the-day nil)
-(setq ecb-auto-activate t)
-(setq ecb-layout-name "left6")
-;(setq ecb-options-version "2.40")
-(setq ecb-primary-secondary-mouse-buttons (quote mouse-1–mouse-2))
-(setq ecb-source-path (quote ("~/")))
 
 ;;======================= ADD PACKAGE SOURCES ========================
 (require 'package)
@@ -49,7 +38,7 @@
 (ac-config-default)
 (add-to-list 'ac-modes 'org-mode)
 ;; set user-dic
-(setq ac-user-dictionary '("Hello" "world"))
+(setq ac-user-dictionary '("Yufei" "world")) 
 
 ;;========================== ORG MODE  ===============================
 ; Some initial langauges we want org-babel to support
@@ -85,9 +74,6 @@
 (define-key global-map (kbd "C-c s") 'google-search-selection)
 
 ;; ======================== Auctex ===================================
-;(load "auctex.el" nil t t)
-;(load "preview-latex.el" nil t t)
-
 (mapc (lambda (mode)
       (add-hook 'LaTeX-mode-hook mode))
       (list 'auto-fill-mode
@@ -129,8 +115,8 @@
 ;; ======================== MOVE BETWEEN WINDOWS =====================
 ;; move between windows with S-arrow, this is commented because I use
 ;; new windows management key binding as following.
-;(windmove-default-keybindings) 
-;(setq windmove-wrap-around t)
+(windmove-default-keybindings) 
+(setq windmove-wrap-around t)
 
 ;; ======================== Windows Management =======================
 ;; map the window manipulation keys to meta 0, 1, 2, o
