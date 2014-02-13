@@ -1,15 +1,16 @@
 ;; -------------------------------------------
 ;;
 ;; dotemacs for GNU Emacs
-;; Time-stamp: <2014-02-13 02:27:17 yufei>
+;; Time-stamp: <2014-02-13 02:43:57 yufei>
 ;;
 ;; -------------------------------------------
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/plugins"))
+(defconst *is-cygwin* (eq system-type 'cygwin))
 
 ;;======================= ADD PACKAGE SOURCES ========================
 (require 'package)
-(if (eq system-type 'cygwin) 
+(if *is-cygwin*
     (add-to-list 'package-archives 
                  '("marmalade" .
                    "http://marmalade-repo.org/packages/") t)
@@ -52,7 +53,7 @@
    (perl . t)
    ))
 
-(if (eq system-type 'cygwin)
+(if *is-cygwin*
     (setq my-org-directory "/cygdrive/c/Users/Yufei/")
     (setq my-org-directory "~/") 
     )
@@ -254,21 +255,20 @@ Position the cursor at its beginning, according to the current mode."
 (require 'julia-mode)
 
 ;; ==================== FONT SETTING  ================================
-(if (eq system-type 'cygwin) 
-    (progn 
-      ;; Setting English Font
-      (set-face-attribute
-       'default nil :font "Consolas 12")
-      
-      ;; Chinese Font
-      (dolist (charset '(kana han symbol cjk-misc bopomofo))
-        (set-fontset-font (frame-parameter nil 'font)
-                          charset
-                          (font-spec :family "Microsoft Yahei" :size 13))))
-  )
+(when *is-cygwin*
+  ;; Setting English Font
+  (set-face-attribute
+   'default nil :font "Consolas 12")
+  
+  ;; Chinese Font
+  (dolist (charset '(kana han symbol cjk-misc bopomofo))
+    (set-fontset-font (frame-parameter nil 'font)
+                      charset
+                      (font-spec :family "Microsoft Yahei" :size 13)))
+)
 
 ;; ==================== eim  ==================================
-(if (eq system-type 'cygwin) ()
+(if *is-cygwin* ()
   (progn
     (add-to-list 'load-path "~/.emacs.d/plugins/emacs-eim")
     (autoload 'eim-use-package "eim" "Another emacs input method")
