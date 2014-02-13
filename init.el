@@ -1,15 +1,11 @@
 ;; -------------------------------------------
 ;;
 ;; dotemacs for GNU Emacs
-;; Time-stamp: <2014-02-13 02:07:22 yufei>
+;; Time-stamp: <2014-02-13 02:27:17 yufei>
 ;;
 ;; -------------------------------------------
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/plugins"))
-
-(setq inhibit-startup-message t) 
-
-(show-paren-mode t) 
 
 ;;======================= ADD PACKAGE SOURCES ========================
 (require 'package)
@@ -91,11 +87,6 @@
             (imenu-add-menubar-index)
             (define-key LaTeX-mode-map (kbd "TAB") 'TeX-complete-symbol)))
 (put 'narrow-to-region 'disabled nil)
-
-;; ======================== ETC ======================================
-(setq-default indent-tabs-mode nil)
-(setq-default tab-width 4)
-(setq indent-line-function 'insert-tab)
 
 ;; ======================= C-MODE ====================================
 (setq c-default-style "linux"
@@ -352,8 +343,6 @@ Position the cursor at its beginning, according to the current mode."
  '(ansi-color-names-vector ["#242424" "#e5786d" "#95e454" "#cae682" "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
  '(custom-enabled-themes (quote (tsdh-dark)))
  '(custom-safe-themes (quote ("71b172ea4aad108801421cc5251edb6c792f3adbaecfa1c52e94e3d99634dee7" default)))
- '(ecb-options-version "2.40")
- '(ecb-primary-secondary-mouse-buttons (quote mouse-2--C-mouse-2) t)
  '(fci-rule-color "#383838")
  '(send-mail-function (quote smtpmail-send-it))
  '(smtpmail-smtp-server "smtpauth.utdallas.edu")
