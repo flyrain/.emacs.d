@@ -1,8 +1,6 @@
-#+TITLE:  .emacs.d
-# Time-stamp: <2014-02-06 13:57:17 cs3612>
-
-Emacs configure directory. Start at init.el. 
-
+# Time-stamp: <2014-02-16 00:09:15 yufei>
+* My Emacs configuration
+Starting at init.el. 
 * Install ELPA packages 
 After =git clone=, you should use M-x list-package to install following packages.
 
@@ -22,12 +20,12 @@ After =git clone=, you should use M-x list-package to install following packages
 | popup              |   0.5 |
 | smex               |   2.0 |
 | starter-kit        | 2.0.3 |
-| virtualenv         |   1.2 |
 | yasnippet          | 0.8.0 |
 | haskell-mode       |  13.7 |
 
 * Install emacs-eim
+#+begin_src sh
+cd ~/.emacs.d/plugins
+git clone https://github.com/wenbinye/emacs-eim
+#+end_src
 
-=cd ~/.emacs.d/plugins=
-
-=git clone https://github.com/wenbinye/emacs-eim=
