@@ -1,7 +1,7 @@
 ;; -------------------------------------------
 ;;
 ;; dotemacs for GNU Emacs
-;; Time-stamp: <2014-02-13 02:43:57 yufei>
+;; Time-stamp: <2014-02-15 23:52:47 yufei>
 ;;
 ;; -------------------------------------------
 
@@ -33,7 +33,15 @@
 ;;========================== AUTOCOMPLETE ============================
 (require 'auto-complete-config)
 (ac-config-default)
-(add-to-list 'ac-modes 'org-mode)
+(dolist (mode '(magit-log-edit-mode
+                log-edit-mode org-mode text-mode haml-mode
+                git-commit-mode
+                sass-mode yaml-mode csv-mode espresso-mode haskell-mode
+                html-mode nxml-mode sh-mode smarty-mode 
+                lisp-mode textile-mode markdown-mode
+                inferior-emacs-lisp-mode))
+  (add-to-list 'ac-modes mode))
+
 ;; set user-dic
 (setq ac-user-dictionary '("Yufei" "world")) 
 
@@ -333,7 +341,11 @@ Position the cursor at its beginning, according to the current mode."
 )
 
 (global-set-key (kbd "C-c q") 'bing-dict)
-    
+
+;;====================== YASNIPPET  ==================================
+(require 'yasnippet)
+(yas-global-mode 1)
+;(add-to-list 'yas-snippet-dir "~/.emacs.d/snippet")
 ;; ==================== custom set  ==================================
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

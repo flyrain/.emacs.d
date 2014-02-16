@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: org-head
+# key: head
+# --
+#+TITLE: ${1:title}
+#+STARTUP: inlineimages
+# C-u C-c .   -> insert date and time
+# Time-stamp: <2014-02-15 23:43:56 yufei>
