@@ -1,7 +1,7 @@
 ;; -------------------------------------------
 ;;
 ;; dotemacs for GNU Emacs
-;; Time-stamp: <2014-02-15 23:52:47 yufei>
+;; Time-stamp: <2014-02-16 00:27:52 yufei>
 ;;
 ;; -------------------------------------------
 
@@ -276,7 +276,7 @@ Position the cursor at its beginning, according to the current mode."
 )
 
 ;; ==================== eim  ==================================
-(if *is-cygwin* ()
+(if (not *is-cygwin* ) 
   (progn
     (add-to-list 'load-path "~/.emacs.d/plugins/emacs-eim")
     (autoload 'eim-use-package "eim" "Another emacs input method")
@@ -343,9 +343,9 @@ Position the cursor at its beginning, according to the current mode."
 (global-set-key (kbd "C-c q") 'bing-dict)
 
 ;;====================== YASNIPPET  ==================================
-(require 'yasnippet)
 (yas-global-mode 1)
 ;(add-to-list 'yas-snippet-dir "~/.emacs.d/snippet")
+
 ;; ==================== custom set  ==================================
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
