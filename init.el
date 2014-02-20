@@ -1,7 +1,7 @@
 ;; -------------------------------------------
 ;;
 ;; dotemacs for GNU Emacs
-;; Time-stamp: <2014-02-20 13:31:51 cs3612>
+;; Time-stamp: <2014-02-20 13:39:39 cs3612>
 ;;
 ;; -------------------------------------------
 
@@ -303,7 +303,7 @@ Position the cursor at its beginning, according to the current mode."
 (setq ecb-windows-width 0.2)
 (setq ecb-compile-window-height 12)
 (setq ecb-compile-window-width (quote edit-window))
-(setq ecb-eshell-auto-activate t)
+;(setq ecb-eshell-auto-activate t)
 (setq ecb-layout-name "left6")
 (setq ecb-options-version "2.40")
 
