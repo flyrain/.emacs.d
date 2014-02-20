@@ -1,7 +1,7 @@
 ;; -------------------------------------------
 ;;
 ;; dotemacs for GNU Emacs
-;; Time-stamp: <2014-02-16 00:27:52 yufei>
+;; Time-stamp: <2014-02-20 13:31:51 cs3612>
 ;;
 ;; -------------------------------------------
 
@@ -250,8 +250,8 @@ Position the cursor at its beginning, according to the current mode."
   (if (> (length my-list) 4)
    (progn 
      (open-file-line 
-      ;(concat "../linux-2.6.32-rc8" (nth 4 my-list)) 
-      (concat "./linux-3.2.52" (nth 4 my-list)) 
+      (concat "../linux-2.6.32-rc8" (nth 4 my-list)) 
+      ;(concat "./linux-3.2.52" (nth 4 my-list)) 
       (string-to-number (nth 3 my-list)))
      (other-window 1)
      (goto-line (+ 1 (line-number-at-pos)))))
@@ -291,12 +291,21 @@ Position the cursor at its beginning, according to the current mode."
      "拼音" "汉字拼音输入法" "py.txt")
 
     ;; 用 ; 暂时输入英文
-    (require 'eim-extra)
-    (global-set-key ";" 'eim-insert-ascii)
+    ;(require 'eim-extra)
+    ;(global-set-key ";" 'eim-insert-ascii)
 
     (custom-set-variables '(default-input-method "eim-py"))
     )
   )
+
+;; ==================== ECB  ==================================
+(setq ecb-primary-secondary-mouse-buttons (quote mouse-1--C-mouse-1))
+(setq ecb-windows-width 0.2)
+(setq ecb-compile-window-height 12)
+(setq ecb-compile-window-width (quote edit-window))
+(setq ecb-eshell-auto-activate t)
+(setq ecb-layout-name "left6")
+(setq ecb-options-version "2.40")
 
 ;; ==================== ESHELL  ==================================
 (setq eshell-aliases-file "~/.emacs.d/eshell-alias")
@@ -352,9 +361,14 @@ Position the cursor at its beginning, according to the current mode."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(ansi-color-names-vector ["#242424" "#e5786d" "#95e454" "#cae682" "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
+ '(ansi-color-names-vector
+   ["#242424" "#e5786d" "#95e454" "#cae682" "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
  '(custom-enabled-themes (quote (tsdh-dark)))
- '(custom-safe-themes (quote ("71b172ea4aad108801421cc5251edb6c792f3adbaecfa1c52e94e3d99634dee7" default)))
+ '(custom-safe-themes
+   (quote
+    ("71b172ea4aad108801421cc5251edb6c792f3adbaecfa1c52e94e3d99634dee7" default)))
+ '(default-input-method "eim-py")
+ '(ecb-options-version "2.40")
  '(fci-rule-color "#383838")
  '(send-mail-function (quote smtpmail-send-it))
  '(smtpmail-smtp-server "smtpauth.utdallas.edu")
