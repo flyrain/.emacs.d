@@ -1,7 +1,7 @@
 ;; -------------------------------------------
 ;;
 ;; dotemacs for GNU Emacs
-;; Time-stamp: <2014-02-20 13:44:22 cs3612>
+;; Time-stamp: <2014-03-14 12:22:50 cs3612>
 ;;
 ;; -------------------------------------------
 
@@ -298,7 +298,16 @@ Position the cursor at its beginning, according to the current mode."
     )
   )
 
-;; ==================== ECB  ==================================
+;; ========================= CEDET  ==================================
+(semantic-mode 1)
+
+;; SRecode
+;(global-srecode-minor-mode 1)
+
+(global-ede-mode 1)                      ; Enable the Project management system
+;(semantic-load-enable-code-helpers)      ; Enable prototype help and smart completion 
+
+;; =========================== ECB  ==================================
 (setq ecb-primary-secondary-mouse-buttons (quote mouse-1--C-mouse-1))
 (setq ecb-windows-width 0.2)
 ;(setq ecb-compile-window-height 12)
