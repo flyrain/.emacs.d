@@ -1,4 +1,4 @@
-# Time-stamp: <2014-02-16 00:09:15 yufei>
+# Time-stamp: <2014-03-15 23:03:55 yufei>
 * My Emacs configuration
 Starting at init.el. 
 * Install ELPA packages 
@@ -19,7 +19,6 @@ After =git clone=, you should use M-x list-package to install following packages
 | paredit            |    22 |
 | popup              |   0.5 |
 | smex               |   2.0 |
-| starter-kit        | 2.0.3 |
 | yasnippet          | 0.8.0 |
 | haskell-mode       |  13.7 |
 
