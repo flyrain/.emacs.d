@@ -1,26 +1,26 @@
-# Time-stamp: <2014-03-15 23:03:55 yufei>
+# Time-stamp: <2014-03-15 23:16:13 yufei>
 * My Emacs configuration
 Starting at init.el. 
 * Install ELPA packages 
 After =git clone=, you should use M-x list-package to install following packages.
 
-| auctex             | 11.86 |
-| auto-complete      |   1.4 |
-| ecb                |  2.40 |
-| find-file-in-pr... |   3.2 |
-| fuzzy              |   0.1 |
-| highlight-inden... | 0.5.0 |
-| idle-highlight-... | 1.1.2 |
-| ido-ubiquitous     |   1.6 |
-| idomenu            |   0.1 |
-| iedit              |  0.97 |
-| magit              | 1.2.0 |
-| nose               | 0.1.1 |
-| paredit            |    22 |
-| popup              |   0.5 |
-| smex               |   2.0 |
-| yasnippet          | 0.8.0 |
-| haskell-mode       |  13.7 |
+| auctex             |
+| auto-complete      |
+| ecb                |
+| find-file-in-pr... |
+| fuzzy              |
+| highlight-inden... |
+| idle-highlight-... |
+| ido-ubiquitous     |
+| idomenu            |
+| iedit              |
+| magit              |
+| nose               |
+| paredit            |
+| popup              |
+| smex               |
+| yasnippet          |
+| haskell-mode       |
 
 * Install emacs-eim
 #+begin_src sh
