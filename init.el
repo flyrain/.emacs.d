@@ -1,7 +1,7 @@
 ;; -------------------------------------------
 ;;
 ;; dotemacs for GNU Emacs
-;; Time-stamp: <2014-03-15 22:57:01 yufei>
+;; Time-stamp: <2014-04-06 18:28:10 yufei>
 ;;
 ;; -------------------------------------------
 
@@ -365,6 +365,11 @@ Position the cursor at its beginning, according to the current mode."
 ;;====================== YASNIPPET  ==================================
 (yas-global-mode 1)
 ;(add-to-list 'yas-snippet-dir "~/.emacs.d/snippet")
+
+;;========================= EVIL  ====================================
+;(require 'evil)
+(evil-mode 1)
+(define-key evil-motion-state-map "\C-]" 'ggtags-find-tag-dwim)
 
 ;; ==================== custom set  ==================================
 (custom-set-variables
