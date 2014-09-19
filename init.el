@@ -1,7 +1,7 @@
 ;; -------------------------------------------
 ;;
 ;; dotemacs for GNU Emacs
-;; Time-stamp: <2014-05-29 13:35:20 cs3612>
+;; Time-stamp: <2014-09-19 14:57:24 cs3612>
 ;;
 ;; -------------------------------------------
 
@@ -325,6 +325,7 @@ Position the cursor at its beginning, according to the current mode."
 ;(add-to-list 'yas-snippet-dir "~/.emacs.d/snippet")
 
 ;;========================= EVIL  ====================================
+(setq evil-want-C-u-scroll t)
 ;(require 'evil)
 (evil-mode 1)
 (define-key evil-motion-state-map "\C-]" 'ggtags-find-tag-dwim)
