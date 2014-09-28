@@ -1,10 +1,11 @@
-# Time-stamp: <2014-06-30 19:47:11 yufei>
+# Time-stamp: <2014-09-28 16:52:49 yufei>
 * My Emacs configuration
 Starting at init.el. 
 * Install ELPA packages 
 After =git clone=, you should use M-x list-package to install following packages.
 
 | idle-highlight-... |
+| evil               |
 | auctex             |
 | auto-complete      |
 | ecb                |
@@ -21,7 +22,7 @@ After =git clone=, you should use M-x list-package to install following packages
 | yasnippet          |
 | haskell-mode       |
 
-* Install emacs-eim
+* Install emacs-eim if in Linux
 #+begin_src sh
 cd ~/.emacs.d/plugins
 git clone https://github.com/wenbinye/emacs-eim
