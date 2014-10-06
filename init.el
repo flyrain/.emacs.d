@@ -1,12 +1,13 @@
 ;; -------------------------------------------
 ;;
 ;; dotemacs for GNU Emacs
-;; Time-stamp: <2014-09-19 14:57:24 cs3612>
+;; Time-stamp: <2014-10-05 19:03:54 yufei>
 ;;
 ;; -------------------------------------------
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/plugins"))
 (defconst *is-cygwin* (eq system-type 'cygwin))
+(defconst *is-a-mac* (eq system-type 'darwin))
 
 ;;======================= ADD PACKAGE SOURCES ========================
 (require 'package)
@@ -31,20 +32,7 @@
 (require 'init-ido)
 (require 'starter-kit)
 
-;;========================== AUTOCOMPLETE ============================
-(require 'auto-complete-config)
-(ac-config-default)
-(dolist (mode '(magit-log-edit-mode
-                log-edit-mode org-mode text-mode haml-mode
-                git-commit-mode
-                sass-mode yaml-mode csv-mode espresso-mode haskell-mode
-                html-mode nxml-mode sh-mode smarty-mode 
-                lisp-mode textile-mode markdown-mode
-                inferior-emacs-lisp-mode))
-  (add-to-list 'ac-modes mode))
 
-;; set user-dic
-(setq ac-user-dictionary '("Yufei" "world")) 
 
 ;;========================== ORG MODE  ===============================
 ; Some initial langauges we want org-babel to support
@@ -222,6 +210,10 @@ Position the cursor at its beginning, according to the current mode."
 (require 'julia-mode)
 
 ;; ==================== FONT SETTING  ================================
+(when *is-a-mac*
+  (set-face-attribute 'default nil :height 150)
+)
+
 (when *is-cygwin*
   ;; Setting English Font
   (set-face-attribute
@@ -320,15 +312,30 @@ Position the cursor at its beginning, according to the current mode."
 
 (global-set-key (kbd "C-c q") 'bing-dict)
 
-;;====================== YASNIPPET  ==================================
-(yas-global-mode 1)
-;(add-to-list 'yas-snippet-dir "~/.emacs.d/snippet")
-
 ;;========================= EVIL  ====================================
 (setq evil-want-C-u-scroll t)
 ;(require 'evil)
 (evil-mode 1)
 (define-key evil-motion-state-map "\C-]" 'ggtags-find-tag-dwim)
+
+;;====================== YASNIPPET  ==================================
+(yas-global-mode 1)
+;(add-to-list 'yas-snippet-dir "~/.emacs.d/snippet")
+
+;;========================== AUTOCOMPLETE ============================
+(require 'auto-complete-config)
+(ac-config-default)
+(dolist (mode '(magit-log-edit-mode
+                log-edit-mode org-mode text-mode haml-mode
+                git-commit-mode
+                sass-mode yaml-mode csv-mode espresso-mode haskell-mode
+                html-mode nxml-mode sh-mode smarty-mode 
+                lisp-mode textile-mode markdown-mode
+                inferior-emacs-lisp-mode))
+  (add-to-list 'ac-modes mode))
+
+;; set user-dic
+(setq ac-user-dictionary '("Yufei" "world")) 
 
 ;; ==================== custom set  ==================================
 (custom-set-variables
