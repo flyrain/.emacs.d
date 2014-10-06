@@ -1,7 +1,7 @@
 ;; -------------------------------------------
 ;;
 ;; dotemacs for GNU Emacs
-;; Time-stamp: <2014-10-05 19:03:54 yufei>
+;; Time-stamp: <2014-10-05 20:42:42 yufei>
 ;;
 ;; -------------------------------------------
 
@@ -211,6 +211,12 @@ Position the cursor at its beginning, according to the current mode."
 
 ;; ==================== FONT SETTING  ================================
 (when *is-a-mac*
+  ;; Chinese Font
+  (dolist (charset '(kana han symbol cjk-misc bopomofo))
+    (set-fontset-font (frame-parameter nil 'font)
+                      charset
+                      (font-spec :family "Heiti SC" :size 14)))
+
   (set-face-attribute 'default nil :height 150)
 )
 
