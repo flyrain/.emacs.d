@@ -1,7 +1,7 @@
 ;; -------------------------------------------
 ;;
 ;; dotemacs for GNU Emacs
-;; Time-stamp: <2014-10-05 20:42:42 yufei>
+;; Time-stamp: <2014-10-11 21:17:49 yufei>
 ;;
 ;; -------------------------------------------
 
@@ -209,29 +209,6 @@ Position the cursor at its beginning, according to the current mode."
 ;; ==================== julia mode  ==================================
 (require 'julia-mode)
 
-;; ==================== FONT SETTING  ================================
-(when *is-a-mac*
-  ;; Chinese Font
-  (dolist (charset '(kana han symbol cjk-misc bopomofo))
-    (set-fontset-font (frame-parameter nil 'font)
-                      charset
-                      (font-spec :family "Heiti SC" :size 14)))
-
-  (set-face-attribute 'default nil :height 150)
-)
-
-(when *is-cygwin*
-  ;; Setting English Font
-  (set-face-attribute
-   'default nil :font "Consolas 12")
-  
-  ;; Chinese Font
-  (dolist (charset '(kana han symbol cjk-misc bopomofo))
-    (set-fontset-font (frame-parameter nil 'font)
-                      charset
-                      (font-spec :family "Microsoft Yahei" :size 13)))
-)
-
 ;; ==================== eim  ==================================
 (if (not *is-cygwin* ) 
   (progn
@@ -343,6 +320,30 @@ Position the cursor at its beginning, according to the current mode."
 ;; set user-dic
 (setq ac-user-dictionary '("Yufei" "world")) 
 
+;; ==================== FONT SETTING  ================================
+(when *is-a-mac*
+  ;; This setting must put before Chinese Font setting
+  (set-face-attribute 'default nil :height 150)
+  ;; Chinese Font Setting
+  (dolist (charset '(kana han symbol cjk-misc bopomofo))
+    (set-fontset-font (frame-parameter nil 'font)
+                      charset
+                      (font-spec :family "Heiti SC" :size 14)))
+
+)
+
+(when *is-cygwin*
+  ;; Setting English Font
+  (set-face-attribute
+   'default nil :font "Consolas 12")
+  
+  ;; Chinese Font
+  (dolist (charset '(kana han symbol cjk-misc bopomofo))
+    (set-fontset-font (frame-parameter nil 'font)
+                      charset
+                      (font-spec :family "Microsoft Yahei" :size 13)))
+)
+
 ;; ==================== custom set  ==================================
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -367,3 +368,4 @@ Position the cursor at its beginning, according to the current mode."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
