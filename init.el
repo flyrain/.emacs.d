@@ -1,7 +1,7 @@
 ;; -------------------------------------------
 ;;
 ;; dotemacs for GNU Emacs
-;; Time-stamp: <2015-01-11 14:22:30 cs3612>
+;; Time-stamp: <2015-04-16 17:45:04 cs3612>
 ;;
 ;; -------------------------------------------
 
@@ -302,6 +302,7 @@ Position the cursor at its beginning, according to the current mode."
 ;(require 'evil)
 (evil-mode 1)
 (define-key evil-motion-state-map "\C-]" 'ggtags-find-tag-dwim)
+(define-key evil-motion-state-map "\M-*" 'ggtags-navigation-mode-abort)
 
 ;;====================== YASNIPPET  ==================================
 (yas-global-mode 1)
@@ -361,6 +362,9 @@ Position the cursor at its beginning, according to the current mode."
  '(default-input-method "eim-py")
  '(ecb-options-version "2.40")
  '(fci-rule-color "#383838")
+ '(package-selected-packages
+   (quote
+    (yasnippet windresize virtualenv starter-kit-eshell smex slime rust-mode racket-mode python-mode pyflakes paredit org-plus-contrib org nose minimap markdown-mode magit ipython iedit idomenu ido-ubiquitous idle-highlight-mode highlight-indentation helm haskell-mode go-mode gist ggtags fuzzy flex-autopair find-file-in-project evil ecb autopair auto-complete auctex anything-ipython anything)))
  '(send-mail-function (quote smtpmail-send-it))
  '(smtpmail-smtp-server "smtpauth.utdallas.edu")
  '(smtpmail-smtp-service 587))
