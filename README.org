@@ -1,4 +1,4 @@
-# Time-stamp: <2015-01-29 19:52:22 yufei>
+# Time-stamp: <2015-04-16 17:54:39 cs3612>
 * My Emacs configuration
 Starting at init.el. 
 * Install ELPA packages 
@@ -23,7 +23,7 @@ After =git clone=, you should use M-x list-package to install following packages
 |  16 | yasnippet          |
 |  17 | haskell-mode       |
 
-* Install emacs-eim if in Linux
+* Install emacs-eim for Chinese input in Linux
 #+begin_src sh
 cd ~/.emacs.d/plugins
 git clone https://github.com/wenbinye/emacs-eim
