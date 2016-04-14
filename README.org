@@ -21,7 +21,6 @@ After =git clone=, you should use M-x list-package to install following packages
 |  14 | popup              |
 |  15 | smex               |
 |  16 | yasnippet          |
-|  17 | haskell-mode       |
 
 * Install emacs-eim for Chinese input in Linux
 #+begin_src sh
