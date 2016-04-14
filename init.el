@@ -1,10 +1,11 @@
 ;; -------------------------------------------
 ;;
 ;; dotemacs for GNU Emacs
-;; Time-stamp: <2015-04-16 17:45:04 cs3612>
+;; Time-stamp: <2016-04-14 11:40:14 yufei.gu>
 ;;
 ;; -------------------------------------------
 
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/plugins"))
 (defconst *is-cygwin* (eq system-type 'cygwin))
 (defconst *is-a-mac* (eq system-type 'darwin))
@@ -33,6 +34,9 @@
 (require 'starter-kit)
 
 
+;;======================== disable visible bell =========================
+(setq visible-bell nil) ;; The default
+(setq ring-bell-function 'ignore)
 
 ;;========================== ORG MODE  ===============================
 ; Some initial langauges we want org-babel to support
@@ -306,7 +310,7 @@ Position the cursor at its beginning, according to the current mode."
 
 ;;====================== YASNIPPET  ==================================
 (yas-global-mode 1)
-;(add-to-list 'yas-snippet-dir "~/.emacs.d/snippet")
+(add-to-list 'yas-snippet-dirs "~/.emacs.d/snippet")
 
 ;;========================== AUTOCOMPLETE ============================
 (require 'auto-complete-config)
@@ -355,16 +359,16 @@ Position the cursor at its beginning, according to the current mode."
  ;; If there is more than one, they won't work right.
  '(ansi-color-names-vector
    ["#242424" "#e5786d" "#95e454" "#cae682" "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
- '(custom-enabled-themes (quote (tsdh-dark)))
+ '(custom-enabled-themes (quote (molokai)))
  '(custom-safe-themes
    (quote
-    ("71b172ea4aad108801421cc5251edb6c792f3adbaecfa1c52e94e3d99634dee7" default)))
+    ("c3c0a3702e1d6c0373a0f6a557788dfd49ec9e66e753fb24493579859c8e95ab" "71b172ea4aad108801421cc5251edb6c792f3adbaecfa1c52e94e3d99634dee7" default)))
  '(default-input-method "eim-py")
- '(ecb-options-version "2.40")
+ '(ecb-options-version "2.40" t)
  '(fci-rule-color "#383838")
  '(package-selected-packages
    (quote
-    (yasnippet windresize virtualenv starter-kit-eshell smex slime rust-mode racket-mode python-mode pyflakes paredit org-plus-contrib org nose minimap markdown-mode magit ipython iedit idomenu ido-ubiquitous idle-highlight-mode highlight-indentation helm haskell-mode go-mode gist ggtags fuzzy flex-autopair find-file-in-project evil ecb autopair auto-complete auctex anything-ipython anything)))
+    (yasnippet windresize virtualenv starter-kit-eshell smex slime rust-mode racket-mode python-mode pyflakes paredit org-plus-contrib org nose minimap markdown-mode magit ipython iedit idomenu ido-ubiquitous highlight-indentation helm haskell-mode go-mode gist ggtags fuzzy flex-autopair find-file-in-project evil ecb autopair auto-complete auctex anything-ipython anything)))
  '(send-mail-function (quote smtpmail-send-it))
  '(smtpmail-smtp-server "smtpauth.utdallas.edu")
  '(smtpmail-smtp-service 587))
