@@ -1,7 +1,7 @@
 ;; -------------------------------------------
 ;;
 ;; dotemacs for GNU Emacs
-;; Time-stamp: <2016-04-14 11:40:14 yufei.gu>
+;; Time-stamp: <2016-06-18 13:29:37 yufei>
 ;;
 ;; -------------------------------------------
 
@@ -32,7 +32,6 @@
 ;;========================== require =====================================
 (require 'init-ido)
 (require 'starter-kit)
-
 
 ;;======================== disable visible bell =========================
 (setq visible-bell nil) ;; The default
@@ -185,7 +184,8 @@ Position the cursor at its beginning, according to the current mode."
 ; ctag -e -R . 
 
 ;; ==================== FILL-COLUMN LENGTH ===========================
-(setq fill-column 89) 
+(add-hook 'text-mode-hook
+  '(lambda() (set-fill-column 80)))
 
 ;; ========================== SEND MAIL  =============================
 (setq user-mail-address "yufei.gu@utdallas.edu")
@@ -310,7 +310,9 @@ Position the cursor at its beginning, according to the current mode."
 
 ;;====================== YASNIPPET  ==================================
 (yas-global-mode 1)
-(add-to-list 'yas-snippet-dirs "~/.emacs.d/snippet")
+; The following is not required, but I keep this in case I need to
+; modify the yas-snippet-dirs in the future.
+;(add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets")
 
 ;;========================== AUTOCOMPLETE ============================
 (require 'auto-complete-config)
@@ -330,13 +332,12 @@ Position the cursor at its beginning, according to the current mode."
 ;; ==================== FONT SETTING  ================================
 (when *is-a-mac*
   ;; This setting must put before Chinese Font setting
-  (set-face-attribute 'default nil :height 150)
+  (set-face-attribute 'default nil :height 125)
   ;; Chinese Font Setting
   (dolist (charset '(kana han symbol cjk-misc bopomofo))
     (set-fontset-font (frame-parameter nil 'font)
                       charset
-                      (font-spec :family "Heiti SC" :size 14)))
-
+                      (font-spec :family "STHeiti" :size 12)))
 )
 
 (when *is-cygwin*
