@@ -1,7 +1,7 @@
 ;; -------------------------------------------
 ;;
 ;; dotemacs for GNU Emacs
-;; Time-stamp: <2016-06-18 13:29:37 yufei>
+;; Time-stamp: <2018-07-11 10:47:19 yufei>
 ;;
 ;; -------------------------------------------
 
@@ -42,7 +42,7 @@
 (org-babel-do-load-languages
  'org-babel-load-languages
  '(
-   (sh . t)
+   (shell . t)
    (python . t)
    (R . t)
    (ruby . t)
@@ -369,7 +369,7 @@ Position the cursor at its beginning, according to the current mode."
  '(fci-rule-color "#383838")
  '(package-selected-packages
    (quote
-    (yasnippet windresize virtualenv starter-kit-eshell smex slime rust-mode racket-mode python-mode pyflakes paredit org-plus-contrib org nose minimap markdown-mode magit ipython iedit idomenu ido-ubiquitous highlight-indentation helm haskell-mode go-mode gist ggtags fuzzy flex-autopair find-file-in-project evil ecb autopair auto-complete auctex anything-ipython anything)))
+    (scala-mode highlight-indent-guides yasnippet windresize virtualenv starter-kit-eshell smex slime rust-mode racket-mode python-mode pyflakes paredit org-plus-contrib org nose minimap markdown-mode magit ipython iedit idomenu highlight-indentation helm haskell-mode go-mode gist ggtags fuzzy flex-autopair find-file-in-project evil ecb autopair auto-complete auctex anything-ipython anything)))
  '(send-mail-function (quote smtpmail-send-it))
  '(smtpmail-smtp-server "smtpauth.utdallas.edu")
  '(smtpmail-smtp-service 587))
