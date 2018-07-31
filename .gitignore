@@ -13,3 +13,6 @@ session.*
 /bookmarks
 /google-c-style.el
 /make-regexp.el
+eshell
+ido.last
+recentf
