@@ -1,4 +1,4 @@
-# Time-stamp: <2015-04-16 17:54:39 cs3612>
+# Time-stamp: <2018-07-31 16:08:30 yufei>
 * My Emacs configuration
 Starting at init.el. 
 * Install ELPA packages 
@@ -13,7 +13,6 @@ After =git clone=, you should use M-x list-package to install following packages
 |   6 | find-file-in-pr... |
 |   7 | fuzzy              |
 |   8 | highlight-inden... |
-|   9 | ido-ubiquitous     |
 |  10 | idomenu            |
 |  11 | iedit              |
 |  12 | magit              |
