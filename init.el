@@ -1,7 +1,6 @@
 ;; -------------------------------------------
 ;;
-;; dotemacs for GNU Emacs
-;; Time-stamp: <2018-07-11 10:47:19 yufei>
+;; Init script for GNU Emacs
 ;;
 ;; -------------------------------------------
 
@@ -210,9 +209,6 @@ Position the cursor at its beginning, according to the current mode."
 ;; ====================== TRACE MAPPING ==============================
 (require 'tracemapping)
 
-;; ==================== julia mode  ==================================
-(require 'julia-mode)
-
 ;; ==================== eim  ==================================
 (if (not *is-cygwin* ) 
   (progn
@@ -303,7 +299,6 @@ Position the cursor at its beginning, according to the current mode."
 
 ;;========================= EVIL  ====================================
 (setq evil-want-C-u-scroll t)
-;(require 'evil)
 (evil-mode 1)
 (define-key evil-motion-state-map "\C-]" 'ggtags-find-tag-dwim)
 (define-key evil-motion-state-map "\M-*" 'ggtags-navigation-mode-abort)
@@ -379,4 +374,3 @@ Position the cursor at its beginning, according to the current mode."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
-
